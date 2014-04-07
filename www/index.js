@@ -2,7 +2,9 @@
 (function () {
   'use strict';
 
-  var PERF_REPORTS_URL = 'http://127.0.0.1:2020/pouchdb_perf_reports';
+  var PERF_REPORTS_URL = document.location.href.indexOf('pouchtest.com') !== -1 ? 
+    'http://pouchtest.com/couchdb/pouchdb_perf_reports' : 
+    'http://127.0.0.1:2020/pouchdb_perf_reports';
 
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(fetchData);
